@@ -1,0 +1,72 @@
+class Door {
+    constructor(number, isCar) {
+        this.number = number;
+        this.isCar = isCar;
+        this.opened = false;
+    }
+
+    createDoor() {
+        
+
+
+    }
+}
+
+
+class Game {
+    constructor() {
+        this.doors = []; // 
+        this.doorPicked; // which door i init picked prob an int
+        this.openedGoatDoor; // which door was the goat door prob an int
+        this.finalPick; // which door was picked prob an int
+        this.won; // true or false
+    }
+    //Add any method needed
+}
+
+
+class Statistics {
+    constructor() {
+        this.gamesWithSameDoorWon = [];
+        this.gamesWithSameDoorLost = [];
+        this.gamesWithDoorChangeWon = [];
+        this.gamesWithDoorChangeLost = [];
+    }
+}
+
+
+//each game needs to make 3 doors
+ let gamesList = new Array();
+ let numOfGame =  5;  // change this to user input
+ let numOfDoor = new Array();
+ 
+
+for (let i = 0; i < numOfGame; i++){
+
+    gamesList.push(new Game());
+
+    numOfDoor.push(new Door(1, false));
+    numOfDoor.push(new Door(2, false));
+    numOfDoor.push(new Door(3, false));
+
+}
+
+for(let i = 0; i < numOfGame; i ++){
+
+    for(let y = 0;y < 3 ; y++ ){
+        gamesList[i].doors.push(numOfDoor[y]);
+        if(y == 2){
+        gamesList[i].doors[y].isCar = true;;
+        }
+       
+    }
+
+}
+
+
+console.log(gamesList[1].doors);
+   
+
+
+
+
